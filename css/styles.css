@@ -1,0 +1,60 @@
+.chart-container2{
+    position: relative; 
+    height: 35vh;
+    width: 66vh;
+}
+.chart-container{
+    position: relative; 
+    height:35vh; 
+    width:31vh;
+    min-width: 31vh;
+    min-height:35vh;
+}
+.card, .cards{
+    border-radius: 0;
+}
+@media (max-width: 375px) /* Dimensiones: iPhone SE */{
+    #sidebar{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #secSwitch{
+        padding: 20px;
+        margin-top: 50px;
+    }
+    #sectDates{
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+    .dates{
+        margin: 10px;
+    }
+    #secCards{
+        height: 90vh;
+        display: flex;
+    }
+    .dataCards{
+        display: flex;
+        align-items: center;
+    }
+    .card, .cards{
+        width: 18rem!important;
+    }
+    .chart-container{
+        position: relative;
+        width: 40vh;
+        height: 40vh;
+    }
+    .chart-container2{
+        position: relative;
+        width: 80vh;
+        height: 40vh;
+    }
+    .scrollContent{
+        overflow: scroll;
+    }
+}
+
+

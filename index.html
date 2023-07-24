@@ -1,0 +1,195 @@
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoart PTG</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- <header>
+        <section id="navbar">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand"><img src="./assets/imges/ptglogo.pn" alt="PTG" style="width: 30px;"></a> 
+                </div>
+              </nav>
+        </section>
+    </header> -->
+    <main>
+        <nav class="container-fluid">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 style="color: black; font-weight: bold;">ORDERS POTOAPP</h1>
+                </div>
+            </div>
+        </nav>
+      <section class="container-fluid">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-2" id="sidebar">
+              <div class="row">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <img src="./assets/images/ptglogo.png" style="margin-top: 20px;" alt="PTG" />
+                    <h6>DashBoard Status</h6>
+                  </div>
+                </div>
+                <!-- <div class="d-grid gap-2" id="secSwitch">
+                  <button class="btn btn-outline-info" type="button">Customers</button>
+                  <button class="btn btn-outline-info" type="button">Orders</button>
+                </div> -->
+              </div>
+              <!-- <ul class="nav flex-column">
+                <li class="nav-item">
+                  <div class="row" id="sectDates">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <label for="selectYear">Año</label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 dates">
+                      <div class="row g-2">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid">
+                              <option selected="">Todas</option>
+                              <option value="default">-</option>
+                            </select>
+                            <label for="floatingSelectGrid">Select Year</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <label for="selectYear">Mes</label>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 dates">
+                      <div class="row g-2">
+                        <div class="col-md">
+                          <div class="form-floating">
+                            <select class="form-select" id="floatingSelectGrid">
+                              <option selected="">Todas</option>
+                              <option value="default">-</option>
+                            </select>
+                            <label for="floatingSelectGrid">Select Month</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 dates">
+
+                    </div>
+                  </div>
+                </li>
+              </ul> -->
+            </div>
+            <div class="col-10" id="status" style="background-color: white;">
+              <div class="row d-flex justify-content-center" id="secCards" style="border: 1px solid rgba(0, 0, 0, 0.2); border-bottom: none; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                <!--Cards-->
+                <div class="col-auto dataCards">
+                  <div class="card cards" style="min-width: 10rem;width: 100%; height: 7.8rem">
+                    <div class="card-body text-center">
+                      <h1 style="font-size: 2.5rem" id="ventasCard">0</h1>
+                      <h6>VENTAS</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto dataCards" style="display: none;"><!-- disable -->
+                  <div class="card cards" style="min-width: 10rem;width: 100%; height: 7.8rem">
+                    <div class="card-body text-center">
+                      <h1 style="font-size: 2.5rem;" id="PorcentajeingresosCard">0%</h1>
+                      <h6>ENTREGADOS</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto dataCards">
+                  <div class="card cards" style="min-width: 10rem;width: 100%; height: 7.8rem">
+                    <div class="card-body text-center">
+                      <h1 style="font-size: 2.5rem" id="importeVentasCard">$0</h1>
+                      <h6>IMPORTE VENTAS</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto dataCards" style="display: none;"><!-- disable -->
+                  <div class="card cards" style="width: 10rem; height: 7.8rem">
+                    <div class="card-body text-center">
+                      <h1 style="font-size: 2.5rem" id="ingresosPorcentajeCard">0%</h1>
+                      <h6>INGRESOS</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto dataCards">
+                  <div class="card cards" style="width: 10rem; height: 7.8rem">
+                    <div class="card-body text-center">
+                      <h1 style="font-size: 2.5rem" id="perdidasCard">0</h1>
+                      <h6>CANCELADOS</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto dataCards">
+                  <div class="card cards" style="width: 10rem; height: 7.8rem">
+                    <div class="card-body text-center">
+                      <h1 style="font-size: 2.5rem" id="perdidasPorcentajeCard">0%</h1>
+                      <h6>PERDIDAS</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-center" style="border: 1px solid rgba(0, 0, 0, 0.2); border-bottom: none;">
+                <!--Grafics-->
+                <div class="col-auto border" >
+                  <div class="chart-container">
+                    <canvas
+                      id="typePayment"></canvas>
+                  </div>
+                </div>
+                <div class="col-auto border">
+                  <div class="chart-container">
+                    <canvas
+                      id="typeService"></canvas>
+                  </div>
+                </div>
+                <div class="col-auto border">
+                  <div class="chart-container">
+                    <canvas
+                      id="typeUnit"></canvas>
+                  </div>
+                </div>
+                <div class="col-auto border">
+                  <div class="chart-container">
+                    <canvas
+                      id="timeOrders"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="row d-flex justify-content-center scrollContent" style="border: 1px solid rgba(0, 0, 0, 0.2); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                <div class="col-auto border-end">
+                  <div class="chart-container2">
+                    <canvas id="orderStatus"></canvas>
+                  </div>
+                </div>
+                <div class="col-auto ">
+                  <div class="chart-container2 text-center">
+                    <div id="orderHistory" style="height: 85%;"></div>
+                    <p style="font-size: small; color: rgba(88, 88, 88, 0.842); padding-top: 5px; font-weight: 500;">HISTORIAL PEDIDOS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--Scripts-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"
+      integrity="sha512-oHBLR38hkpOtf4dW75gdfO7VhEKg2fsitvHZYHZjObc4BPKou2PGenyxA5ZJ8CCqWytBx5wpiSqwVEBy84b7tw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="./js/orders.js" ></script>
+  </body>
+</html>
