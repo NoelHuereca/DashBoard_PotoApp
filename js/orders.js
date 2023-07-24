@@ -79,9 +79,11 @@ const calcularImporteVentas = (pedidos) => {
     let importe = 0
     try {
         pedidos.forEach((pedido) => {
-            if (!isNaN(parseFloat(pedido.precioExt))) {
-                importeArray.push(parseFloat(pedido.precioExt))
-            }
+            if(pedido.estatus!=2){
+                if (!isNaN(parseFloat(pedido.precioExt))) {
+                    importeArray.push(parseFloat(pedido.precioExt))
+                }
+            } 
         })
         importe = importeArray.reduce((acc, num) => {
             return acc + num
@@ -143,6 +145,9 @@ const calcularPerdidas = (pedidos) => {
 }
 const calcularPorcetajePerdidas = (pedidos) => {
     const perdidasArray = []
+    const perdidas = []
+    let importePerdidas = 0
+    //perdidasMonetarioCard
     try {
         pedidos.forEach((pedido) => {
             if (pedido.estatus == 2) {
@@ -150,6 +155,16 @@ const calcularPorcetajePerdidas = (pedidos) => {
             }
         })
         perdidasPorcentajeCard.innerHTML = `${((perdidasArray.length / pedidos.length) * 100).toFixed(0)}%`
+        perdidasArray.forEach((pedido)=>{
+            if(!isNaN(parseFloat(pedido.precioExt))){
+                perdidas.push(parseFloat(pedido.precioExt))
+            }
+        })
+        console.log("perdidasimport",perdidas)
+        importePerdidas = perdidas.reduce((total, num)=>{
+            return total + num
+        })
+        perdidasMonetarioCard.innerHTML = `$${(parseFloat(importePerdidas)).toLocaleString()}`
     } catch (error) {
         console.error("Ups, algo salio mal", error)
     }
@@ -631,10 +646,20 @@ function generarGraficas() {
         chart.draw(data, options);
     }
 }
-
 async function graficarDatos() {
     await consultaPedidos()
     generarGraficas()
 }
 graficarDatos()
+function refreshPage() {
+    location.reload(); // Recarga la página
+  }
+
+  // Función para programar la recarga cada 20 minutos
+  function scheduleRefresh() {
+    setInterval(refreshPage, 10 * 60 * 1000); // 20 minutos en milisegundos
+  }
+
+  // Llama a la función para iniciar la programación de la recarga
+  scheduleRefresh();
 
